@@ -1,5 +1,7 @@
 
 
+using Microsoft.OpenApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +10,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Perfume Store Api 1",
+        Version = "v1",
+        Description = "Documantation For Perfume Store Application Project",
+        Contact = new OpenApiContact()
+        {
+            Email = "info@perfumestore.com",
+            Name = "Eng. Zakaria AboSilmiyeh - Mohammed Jaber - Sewar Syam",
+            Url = new Uri("https://www.perfumestore.com"),
+        },
+        License = new OpenApiLicense()
+        {
+            Name = "Perfume Store App Licence",
+            Url = new Uri("https://www.perfumestore.com/apilicence")
+        }
+    });
+});
 builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefalutConnection")));
 builder.Services.AddTransient<IUserAuthetication, UserAuthetication>();
 builder.Services.AddTransient<IRepository<Perfume>, PerfumeRepo>();
@@ -70,7 +91,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PerfumeStore v1"));
 }
 
 app.UseHttpsRedirection();
