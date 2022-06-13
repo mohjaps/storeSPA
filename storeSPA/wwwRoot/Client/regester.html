@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Login V2</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+	<!--fontawesome-->
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" />
+
+	<link rel="stylesheet" type="text/css" href="asstes/css/util.css" />
+	<link rel="stylesheet" type="text/css" href="asstes/css/main.css" />
+</head>
+
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form id="frmRegister" class="login100-form validate-form">
+					<span class="login100-form-title p-b-26"> Welcome </span>
+					<span class="login100-form-title p-b-48">
+						<img src="asstes/imges/logo.png" />
+					</span>
+
+					<div class="d-flex">
+						<div class="wrap-input100 validate-input me-2" data-validate="">
+							<input class="input100" type="text" name="fname" />
+							<span class="focus-input100" data-placeholder="First Name"></span>
+						</div>
+						<div class="wrap-input100 validate-input" data-validate="">
+							<input class="input100" type="text" name="lname" />
+							<span class="focus-input100" data-placeholder="Last Name"></span>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="">
+						<input class="input100" type="text" name="country" />
+						<span class="focus-input100" data-placeholder="Country"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+						<input class="input100" type="text" name="email" />
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="d-flex">
+						<div class="wrap-input100 validate-input me-2" data-validate="Enter password">
+							<input class="input100" type="password" name="pass" />
+							<span class="focus-input100" data-placeholder="Password"></span>
+						</div>
+
+						<div class="wrap-input100 validate-input" data-validate="confirm password">
+							<input class="input100" type="password" name="retypepass" />
+							<span class="focus-input100" data-placeholder="confirm Password"></span>
+						</div>
+					</div>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" id="registerBtn">
+								Register
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<a class="txt2" href="login.html"> login </a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="dropDownSelect1"></div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+	<script src="asstes/jquery/jquery-3.2.1.min.js"></script>
+	<script src="asstes/js/main.js"></script>
+	<script src="authRegister.js"></script>
+</body>
+
+</html>

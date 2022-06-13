@@ -1,0 +1,61 @@
+.btn-outline-primary {
+    color: #485fc7;
+}
+
+.btn-outline-primary:hover {
+    background-color: #485fc7;
+}
+
+.pagination-link {
+    border-color: #dbdbdb;
+    color: #363636;
+    min-width: 2.5em;
+    border-radius: 50% !important;
+}
+
+.next,
+.previous {
+    border-radius: 20% !important;
+}
+
+.imgintabel {
+    width: 80px;
+    height: 80px;
+}
+
+
+.fa-edit {
+    color: #4a4a4a;
+ 
+}
+
+.fa-edit:hover {
+    color: #ffc107;
+}
+
+.fa-trash-can {
+    color: #4a4a4a;
+}
+
+.fa-trash-can:hover {
+    color: #dc3545;
+}
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+
+p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /* max-width: calc(70em * 0.5); */
+}
+
+.modelimg{
+    height: 400px;
+}

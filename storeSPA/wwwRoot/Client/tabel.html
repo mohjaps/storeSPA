@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--responsive-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css" />
+    <!--hover-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bulma.min.css" />
+    <!--bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="asstes/css/styleDash.css" />
+    <!-- CSS only -->
+</head>
+
+<body>
+
+
+    ً
+
+
+    <div class="container-fluid container-md py-5">
+        <div class="d-flex justify-content-between align-items-center py-2">
+            <p class="m-0 fs-1"><i class="fa fa-dashboard"></i> Dashboard </p>
+            <a class="btn btn-outline-primary fs-4" href="">Add <i class="fa-solid fa-cloud-plus"></i></a>
+        </div>
+        <hr class="bg-secondary" />
+        <div class="row">
+            <table id="example" class="table responsive cell-border hover text-center" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Quantity</th>
+                        <th>price</th>
+                        <th>Edite</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Tiger Nixon</td>
+                        <td>
+                            <p>
+                                Architect Architect Architect Architect Architect Architect Architect Architect
+                                Architect Architect Architect
+                                <span id="foo" style="display:none">Architect Architect Architect Architect Architect
+                                    Architect Architect Ars</span>
+                                <span id="showHide">Click for more...</span>
+                            </p>
+
+
+                        </td>
+                        <td>
+                            <img data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                src="https://media-cdn.tripadvisor.com/media/photo-f/12/27/91/59/riverland-dubai.jpg"
+                                class="imgintabel">
+                        </td>
+                        <td>61</td>
+                        <td>1200$</td>
+                        <td><a href=""><i class="fas fa-edit fs-4"></i></a></td>
+                        <td><a href=""></a><i class="fa-solid fa-trash-can fs-4"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Tiger Nixon</td>
+                        <td>Architect Architect Architect Architect Architect Ars </td>
+                        <td><img data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                src="https://www.imgacademy.com/sites/default/files/college-planning-hero.jpg"
+                                class="imgintabel"></td>
+                        <td>61</td>
+                        <td>1200$</td>
+                        <td><i class="fas fa-edit fs-4"></i></td>
+                        <td><i class="fa-solid fa-trash-can fs-4"></i></td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Tiger Nixon</td>
+                        <td>ArchitectArchitect Architect Ars </td>
+                        <td><img src=""></td>
+                        <td>61</td>
+                        <td>1200$</td>
+                        <td><i class="fas fa-edit fs-4"></i></td>
+                        <td><i class="fa-solid fa-trash-can fs-4"></i></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Tiger Nixon</td>
+                        <td>
+                            <p>
+                                Architect Architect Architect Architect Architect Architect Architect Architect
+                                Architect Architect Architect Architect Architect Architect Architect Architect
+                                Architect Architect Architect Architect Architect Architect Architect Architect
+                                Architect Ars
+
+                            </p>
+
+                        </td>
+                        <td><img src=""></td>
+                        <td>61</td>
+                        <td>1200$</td>
+                        <td><i class="fas fa-edit fs-4"></i></td>
+                        <td><i class="fa-solid fa-trash-can fs-4"></i></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ">
+                <button type="button" class="btn-close bg-white p-2 position-absolute" style="right: 0; top:0;"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+                <img src="https://media-cdn.tripadvisor.com/media/photo-f/12/27/91/59/riverland-dubai.jpg"
+                    class="modelimg w-100">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <script>
+        document.getElementById("showHide").onclick = function () {
+            var theDiv = document.getElementById("foo");
+            if (theDiv.style.display == 'none') {
+                theDiv.style.display = 'inline';
+                this.innerHTML = 'hide';
+            } else {
+                theDiv.style.display = 'none';
+                this.innerHTML = 'Click for more..';
+            }
+        }
+    </script> -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bulma.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                autoWidth: false,
+                columnDefs: [
+                    {
+                        targets: ['_all'],
+                        className: 'mdc-data-table__cell',
+                    },
+                ],
+                Responsive: true,
+            });
+        });
+
+    </script>
+</body>
+
+</html>

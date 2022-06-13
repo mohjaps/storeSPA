@@ -1,0 +1,55 @@
+* {
+    font-weight: lighter;
+}
+
+.nav-link {
+    color: black;
+}
+
+#demo {
+    width: 100%;
+    height: 50em;
+    overflow: hidden;
+}
+
+.carouselimg {
+    width: inherit;
+}
+
+#demo::before {
+    content: "";
+    position: absolute;
+    background-color: red;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    z-index: 100;
+}
+
+.borders {
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.carousel-control-prev .carousel-control-next {
+    position: absolute;
+    z-index: 100;
+}
+
+
+.beforeimg::before {
+    content: "dddddddddddddddddd";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(48, 48, 48);
+    opacity: 0.5;
+
+}
