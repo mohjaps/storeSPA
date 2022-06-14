@@ -1,3 +1,11 @@
+const LOCALLINK = window.location.origin;
+const GETFORUSER = LOCALLINK + '/api/Data/GetByUserPerfume';
+const INSERTPERFUME = LOCALLINK + '/api/Data/NewPerfume';
+const UPDATEPERFUME = LOCALLINK + '/api/Data/UpdatePerfume';
+const DELETEPERFUME = LOCALLINK + '/api/Data/DeletePerfume';
+
+
+
 window.addEventListener('load', function () {
     if (localStorage.getItem('token') == null) {
         window.location.href = '/Client/login.html';
@@ -8,8 +16,7 @@ window.addEventListener('load', function () {
 
 function getAllData() {
     let xhr = new XMLHttpRequest();
-    let url = 'https://localhost:7026/api/Data/GetByUserPerfume';
-    xhr.open('GET', url, true);
+    xhr.open('GET', GETFORUSER, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token').toString()}`);
     xhr.send();
@@ -93,8 +100,7 @@ function InsertData() {
     form_data.append('Price', frm.elements.price.value);
     let xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    let url = 'https://localhost:7026/api/Data/NewPerfume';
-    xhr.open('POST', url, true);
+    xhr.open('POST', INSERTPERFUME, true);
     xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token').toString()}`);
     xhr.send(form_data);
     xhr.onload = function () {
@@ -146,8 +152,7 @@ function UpdateData() {
     form_data.append('Price', frm.elements.price.value);
     let xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    let url = 'https://localhost:7026/api/Data/UpdatePerfume';
-    xhr.open('PUT', url, true);
+    xhr.open('PUT', UPDATEPERFUME, true);
     xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token').toString()}`);
     xhr.send(form_data);
     xhr.onload = function () {
@@ -191,7 +196,7 @@ function UpdateData() {
 
 let xhr = new XMLHttpRequest();
 function DeletePerfume(id) {
-    let url = 'https://localhost:7026/api/Data/DeletePerfume?id=' + id;
+    let url = `${DELETEPERFUME}?id=` + id;
     xhr.open('DELETE', url, true);
     xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token').toString()}`);
     xhr.send();

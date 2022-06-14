@@ -1,0 +1,54 @@
+Email: perfumestoregtc2022@gmail.com
+Password: Perfume@Store@2022
+
+// 
+Account Details
+Login Name: perfumestore
+Password: Perfume@Store1
+
+//
+Database Details 
+Name: perfumestore
+Password: Perfume@Store1
+
+// 
+Site Details
+	
+Notice:	To ensure you receive our future emails such as maintenance notices and renewal notices, please add us to your contact list.
+
+
+Thank You. Your hosting account was activated.
+
+
+FTP Login
+Ftp address: win5252.site4now.net
+Ftp username: perfumestore-001
+Ftp password: Perfume@Store1
+Instructions: https://www.smarterasp.net/support/kb/a1774/how-to-use-ftp-to-publish-application-via-visual-studio-2015.aspx
+
+Web Deploy
+Server: https://win5252.site4now.net:8172/MsDeploy.axd?site=perfumestore-001-site1
+Site name: perfumestore-001-site1
+User name: perfumestore-001
+Password: Perfume@Store1
+Instructions: https://www.smarterasp.net/support/kb/a1973/core-to-core-deploy-asp_net-core-app-to-an-environment-that-doesnt-include-asp_net.aspx
+
+Temporary Url for testing
+-http://perfumestore-001-site1.btempurl.com
+
+How to map a domain name
+1) Login to your control panel
+2) On the left navigation menu, click on your website.
+3) In your website section, you will see the domain mapping function to map your domain.
+
+Domain Nameservers
+If you registered your domain name from a different company, please make sure you point the DNS to our DNS severs.
+-Ns1.site4now.net
+-Ns2.site4now.net
+-Ns3.site4now.net
+
+Quick start guide
+To get more info on how to get started quickly, please see this kb article:
+-https://www.smarterasp.net/support
+If you have questions or concerns, please contact us at
+https://www.smarterasp.net/contact

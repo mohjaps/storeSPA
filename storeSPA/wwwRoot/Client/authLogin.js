@@ -12,7 +12,7 @@ frmLogin.addEventListener('submit', function (e) {
         let email = frmLogin.elements.email.value
         let password = frmLogin.elements.password.value
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://localhost:7026/api/AuthUsers/login', true);
+        xhr.open('POST', `${window.location.origin}/api/AuthUsers/login`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({ email, password }));
         xhr.onload = function () {

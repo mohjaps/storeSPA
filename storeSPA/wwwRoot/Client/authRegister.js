@@ -15,7 +15,7 @@ frmRegister.addEventListener('submit', function (e) {
         let email = frmRegister.elements.email.value
         let password = frmRegister.elements.pass.value
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://localhost:7026/api/AuthUsers/register', true);
+        xhr.open('POST', `${window.location.origin}/api/AuthUsers/register`, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({ firstName, lastName, country, email, password }));
         xhr.onload = function () {

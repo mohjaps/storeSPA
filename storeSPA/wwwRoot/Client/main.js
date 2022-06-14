@@ -2,7 +2,7 @@ let all = [];
 window.onload = function () {
     setAuth();
     let xhr = new XMLHttpRequest();
-    let url = "https://localhost:7026/api/Data/GetAll";
+    let url = `${window.location.origin}/api/Data/GetAll`;
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();

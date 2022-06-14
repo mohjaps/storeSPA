@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen(c =>
         Contact = new OpenApiContact()
         {
             Email = "info@perfumestore.com",
-            Name = "Eng. Zakaria AboSilmiyeh - Mohammed Jaber - Sewar Syam",
+            Name = "Eng. Zakaria AboSilmiyeh - Mohammed Jaber - Sewar Siyam",
             Url = new Uri("https://www.perfumestore.com"),
         },
         License = new OpenApiLicense()
