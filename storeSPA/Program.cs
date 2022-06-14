@@ -61,7 +61,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options => {
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("All", opts => opts.RequireClaim("Auth", new[] {"Admin", "Manager"}));
-    options.AddPolicy("Admin", opts => opts.RequireClaim("Auth", "Manager"));
+    options.AddPolicy("Admin", opts => opts.RequireClaim("Auth", "Admin"));
 });
 
 var options = builder.Configuration.GetSection("JWT");
@@ -76,8 +76,8 @@ builder.Services.AddAuthentication(x =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateAudience = true,
-            ValidateIssuer = true,
+            ValidateAudience = false,
+            ValidateIssuer = false,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
         };
     });

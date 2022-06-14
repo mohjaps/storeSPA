@@ -65,7 +65,7 @@ namespace storeSPA.Data.Repos
         public async Task<DataResult<Perfume>> GetAll()
         {
             SqlConnection conn = GetConnectionString();
-            string query = "GetAll";
+            string query = "GetAllPerfumes";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
 

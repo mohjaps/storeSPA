@@ -1,202 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>perfume</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>perfume</title>
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--fontawesome-->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
+    />
 
-  <!--fontawesome-->
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" />
+    <link rel="stylesheet" href="asstes/css/styleindex.css" />
+  </head>
 
-
-  <link rel="stylesheet" href="asstes/css/styleindex.css" />
-</head>
-
-<body>
-  <header class="bg-white sticky-top">
-    <ul class="container nav justify-content-between align-items-center flex-column-reverse  flex-md-row">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><img src="asstes/imges/logo.png" class="img-fluid" alt="logo"></a>
-      </li>
-      <li class="nav-item d-flex">
-        <a class="nav-link fs-4" href="login.html">
-          <i class="fa-light fa-circle-user px-1"></i> login
-        </a>
-        <a class="nav-link fs-4" href="regester.html">
-          <i class="fa-light fa-id-card px-1"></i> Register
-        </a>
-      </li>
-
-    </ul>
-  </header>
-  <section>
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-      <div class="carousel-indicators position-absolute bottom-0">
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  <body>
+    <header class="bg-white sticky-top">
+      <ul
+        class="container nav justify-content-between align-items-center flex-column-reverse flex-md-row"
+      >
+        <li class="nav-item">
+          <a class="nav-link" href="/Client/index.html"
+            ><img src="asstes/imges/logo.png" class="img-fluid" alt="logo"
+          /></a>
+        </li>
+        <li class="nav-item d-flex" id="auths"></li>
+      </ul>
+    </header>
+    <section>
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div
+          class="carousel-indicators position-absolute bottom-0"
+          id="carouselBtnsBox"
+        ></div>
+        <div class="carousel-inner" id="carouselBox"></div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide="prev"
+        >
+          <i class="fa-solid fa-left-long borders fs-4"></i>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide="next"
+        >
+          <i class="fa-solid fa-right-long borders fs-4"></i>
+        </button>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="beforeimg">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0125/3480/8676/files/kurshna_19976857-86bc-43e1-b9af-9c52864436ff_1296x.jpg?v=1653846446"
-              class="img-fluid w-100">
-          </div>
-          <div class="carousel-caption">
-            <h3>Los Angeles</h3>
-            <p>We had such a great time in LA!</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="beforeimg">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0125/3480/8676/files/kurshna_19976857-86bc-43e1-b9af-9c52864436ff_1296x.jpg?v=1653846446"
-              class="img-fluid w-100">
-          </div>
-          <div class="carousel-caption">
-            <h3>Chicago</h3>
-            <p>Thank you, Chicago!</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="beforeimg">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0125/3480/8676/files/kurshna_19976857-86bc-43e1-b9af-9c52864436ff_1296x.jpg?v=1653846446"
-              class="img-fluid w-100">
-          </div>
-          <div class="carousel-caption">
-            <h3>New York</h3>
-            <p>We love the Big Apple!</p>
-          </div>
-        </div>
+    </section>
+
+    <section class="py-5">
+      <h1 class="text-center fw-bold pb-5 bor"><span> perfume </span></h1>
+      <div class="container">
+        <div class="row g-3" id="galary"></div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-        <i class="fa-solid fa-left-long borders fs-4"></i>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-        <i class="fa-solid fa-right-long borders fs-4"></i>
-      </button>
-    </div>
-  </section>
+    </section>
 
-
-
-  <section class="py-5">
-    <h1 class="text-center fw-bold pb-5 bor"><span> perfume </span></h1>
-    <div class="container">
-      <div class="row g-3">
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="text-center overflow-hidden">
-            <span class="pos-absolute" style="background-color: #111;"></span>
-            <img src="https://images.unsplash.com/photo-1578944032637-f09897c5233d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ)" class="img-fluid prom"/>
-            <div class="borders">
-              <p class="fs-3 m-0">perfume name</p>
-              <p class="fs-4 m-0">1200$</p>
-              <p class="fs-4">MORE</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="card">
-            <div class="card-thumb">
-              <a href="#"><img src="https://images.unsplash.com/photo-1578944032637-f09897c5233d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ)" alt="" /></a>
-              <span class="card-category">1200$</span>
-            </div>
-            <div class="card-body">
-              <h2 class="card-title">perfume name</h2>
-              <a href=""><p class="fs-6">MORE</p></a>
-              <p class="card-description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla atque
-                consectetur, adipisicing elit.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="card">
-            <div class="card-thumb">
-              <a href="#"><img src="https://images.unsplash.com/photo-1652159689167-1f1bf55a6abe?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTM2NjgzNTc&ixlib=rb-1.2.1&q=80" alt="" /></a>
-              <span class="card-category">1200$</span>
-            </div>
-            <div class="card-body">
-              <h2 class="card-title">perfume name</h2>
-              <a href=""><p class="fs-6">MORE</p></a>
-              <p class="card-description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla atque
-                consectetur, adipisicing elit.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="card">
-            <div class="card-thumb">
-              <a href="#"><img src="https://images.unsplash.com/photo-1652159689167-1f1bf55a6abe?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTM2NjgzNTc&ixlib=rb-1.2.1&q=80" alt="" /></a>
-              <span class="card-category">1200$</span>
-            </div>
-            <div class="card-body">
-              <h2 class="card-title">perfume name</h2>
-              <a href=""><p class="fs-6">MORE</p></a>
-              <p class="card-description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla atque
-                consectetur, adipisicing elit.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
-</button>
+</button> -->
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="row align-items-center">
-          <div class="col-12 col-md-6">
-            <img src="https://images.unsplash.com/photo-1578944032637-f09897c5233d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ)" class="img-fluid"/>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="text-center">
-              <p class="fs-3">name</p>
-              <p>description</p>
-              <p class="fs-4 fw-bold">1200$</p>
-              <p class="btn btn-secondary">Bay now</p>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row align-items-center">
+              <div class="col-12 col-md-6">
+                <img
+                  id="modalImage"
+                  src="https://images.unsplash.com/photo-1578944032637-f09897c5233d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ)"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="text-center">
+                  <p class="fs-3" id="modalName">name</p>
+                  <p id="modalDesc">description</p>
+                  <p class="fs-4 fw-bold" id="modalPrice">1200$</p>
+                  <p class="btn btn-secondary">Bay now</p>
+                </div>
+              </div>
             </div>
           </div>
+          <button
+            type="button"
+            class="btn-close position-absolute top-0 fs-1"
+            style="right: 2px"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
       </div>
-      <button type="button" class="btn-close position-absolute top-0 fs-1" style="right: 2px;" data-bs-dismiss="modal" aria-label="Close"></button>
-
     </div>
-  </div>
-</div>
 
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-
-</body>
-
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
 </html>

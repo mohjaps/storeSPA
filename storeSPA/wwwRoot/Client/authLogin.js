@@ -19,8 +19,9 @@ frmLogin.addEventListener('submit', function (e) {
             if (xhr.status == 200) {
                 let data = JSON.parse(xhr.responseText);
                 if (data['result']) {
-                    console.log('Token', data['token']);
-                    window.location.href = '/tabel.html';
+                    localStorage.setItem('token', data['token']);
+                    localStorage.setItem('userName', data['name']);
+                    window.location.href = '/Client/tabel.html';
                 }
                 else {
                     let errors = data['errors'];

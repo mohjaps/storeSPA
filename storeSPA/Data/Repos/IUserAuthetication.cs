@@ -63,25 +63,43 @@ namespace storeSPA.Data.Repos
 
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_ApiSettings.Key);
-            var tokenDescriptor = new SecurityTokenDescriptor
+            //var key = Encoding.ASCII.GetBytes(_ApiSettings.Key);
+            //var tokenDescriptor = new SecurityTokenDescriptor
+            //{
+            //    Subject = new ClaimsIdentity(new Claim[] {
+            //        new Claim(ClaimTypes.Name, user.Id.ToString()),
+            //        authClaim
+            //    }),
+            //    Expires = DateTime.UtcNow.AddDays(_ApiSettings.ExpireDate),
+            //    SigningCredentials = new SigningCredentials
+            //                    (new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            //};
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_ApiSettings.Key));
+            var claims = new[]
             {
-                Subject = new ClaimsIdentity(new Claim[] {
-                    new Claim(ClaimTypes.Name, user.Id.ToString()),
-                    authClaim
-                }),
-                Expires = DateTime.UtcNow.AddDays(_ApiSettings.ExpireDate),
-                SigningCredentials = new SigningCredentials
-                                (new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim("UserId", user.Id),
+                authClaim
             };
+            var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var jwtSecurityToken = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.UtcNow.AddDays(_ApiSettings.ExpireDate),
+                signingCredentials: signingCredentials);
 
             apiResult.Name = String.Concat(user.First_Name, " ", user.Last_Name);
             apiResult.Email = user.Email;
             apiResult.ExpireDate = DateTime.UtcNow.AddHours(_ApiSettings.ExpireDate);
             apiResult.Id = user.Id;
             
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            apiResult.Token = tokenHandler.WriteToken(token);
+            //var token = tokenHandler.CreateToken(tokenDescriptor);
+            
+            apiResult.Token = tokenHandler.WriteToken(jwtSecurityToken);
             apiResult.Result = true;
             return apiResult;
         }

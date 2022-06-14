@@ -45,7 +45,8 @@ namespace storeSPA.Controllers
                 perfume.Image = fileName;
 
             }
-            perfume.Saler_Id = User.FindFirstValue("Id");
+            var userId = HttpContext.User.FindFirstValue("UserId");
+            perfume.Saler_Id = userId;
             return Ok(await _repo.Add(perfume));
         }
 
@@ -81,10 +82,10 @@ namespace storeSPA.Controllers
 
         [Authorize("Admin")]
         [HttpDelete("DeletePerfume")]
-        public async Task<IActionResult> Delete(String data)
+        public async Task<IActionResult> Delete(String id)
         {
             if (ModelState.IsValid) { }
-                return Ok(await _repo.Delete(data));
+                return Ok(await _repo.Delete(id));
 
             return Ok(new ApiResult { Result = false });
         }
@@ -108,16 +109,17 @@ namespace storeSPA.Controllers
         }
 
         [HttpGet("GetByUserPerfume")]
-        [Authorize("All")]
+        [Authorize(Policy = "All")]
         public async Task<IActionResult> GetAllForUser()
         {
-            return Ok(await _repo.GetAllForUser(User.FindFirstValue("Id")));
+            var userId = HttpContext.User.FindFirstValue("UserId");
+            return Ok(await _repo.GetAllForUser(userId));
         }
 
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _repo.GetAllForUser("b6b9e85f-b28b-42da-8054-3738f8ae4c07"));
+            return Ok(await _repo.GetAll());
         }
 
     }
