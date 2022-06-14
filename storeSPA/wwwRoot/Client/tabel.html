@@ -12,116 +12,67 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
     <!--fontawesome-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bulma.min.css" />
     <!--bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="asstes/css/styleindex.css" />
     <link rel="stylesheet" href="asstes/css/styleDash.css" />
     <!-- CSS only -->
 </head>
 
 <body>
+    <header class="bg-white sticky-top head">
+        <ul class="container nav justify-content-between align-items-center flex-column-reverse  flex-md-row">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img src="asstes/imges/logo.png" class="img-fluid" alt="logo"></a>
+            </li>
+            <li class="nav-item d-flex">
+                <a class="nav-link fs-4" href="login.html">
+                    <i class="fa-light fa-circle-user px-1"></i> login
+                </a>
+                <a class="nav-link fs-4" href="regester.html">
+                    <i class="fa-light fa-id-card px-1"></i> Register
+                </a>
+            </li>
 
-
-    ً
+        </ul>
+    </header>
 
 
     <div class="container-fluid container-md py-5">
         <div class="d-flex justify-content-between align-items-center py-2">
             <p class="m-0 fs-1"><i class="fa fa-dashboard"></i> Dashboard </p>
-            <a class="btn btn-outline-primary fs-4" href="">Add <i class="fa-solid fa-cloud-plus"></i></a>
+            <a class="btn btn-outline fs-4" onclick="Add()">Add
+                <i class="fa-solid fa-cloud-plus"></i></a>
         </div>
         <hr class="bg-secondary" />
         <div class="row">
             <table id="example" class="table responsive cell-border hover text-center" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                        <th>Quantity</th>
-                        <th>price</th>
-                        <th>Edite</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Tiger Nixon</td>
-                        <td>
-                            <p>
-                                Architect Architect Architect Architect Architect Architect Architect Architect
-                                Architect Architect Architect
-                                <span id="foo" style="display:none">Architect Architect Architect Architect Architect
-                                    Architect Architect Ars</span>
-                                <span id="showHide">Click for more...</span>
-                            </p>
-
-
-                        </td>
-                        <td>
-                            <img data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                src="https://media-cdn.tripadvisor.com/media/photo-f/12/27/91/59/riverland-dubai.jpg"
-                                class="imgintabel">
-                        </td>
-                        <td>61</td>
-                        <td>1200$</td>
-                        <td><a href=""><i class="fas fa-edit fs-4"></i></a></td>
-                        <td><a href=""></a><i class="fa-solid fa-trash-can fs-4"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Tiger Nixon</td>
-                        <td>Architect Architect Architect Architect Architect Ars </td>
-                        <td><img data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                src="https://www.imgacademy.com/sites/default/files/college-planning-hero.jpg"
-                                class="imgintabel"></td>
-                        <td>61</td>
-                        <td>1200$</td>
-                        <td><i class="fas fa-edit fs-4"></i></td>
-                        <td><i class="fa-solid fa-trash-can fs-4"></i></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tiger Nixon</td>
-                        <td>ArchitectArchitect Architect Ars </td>
-                        <td><img src=""></td>
-                        <td>61</td>
-                        <td>1200$</td>
-                        <td><i class="fas fa-edit fs-4"></i></td>
-                        <td><i class="fa-solid fa-trash-can fs-4"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Tiger Nixon</td>
-                        <td>
-                            <p>
-                                Architect Architect Architect Architect Architect Architect Architect Architect
-                                Architect Architect Architect Architect Architect Architect Architect Architect
-                                Architect Architect Architect Architect Architect Architect Architect Architect
-                                Architect Ars
-
-                            </p>
-
-                        </td>
-                        <td><img src=""></td>
-                        <td>61</td>
-                        <td>1200$</td>
-                        <td><i class="fas fa-edit fs-4"></i></td>
-                        <td><i class="fa-solid fa-trash-can fs-4"></i></td>
-                    </tr>
-
-                </tbody>
             </table>
-
         </div>
     </div>
 
-    <!-- Modal -->
+    <div id="testmodal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal img -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content ">
@@ -133,35 +84,110 @@
         </div>
     </div>
 
+    <!-- Modal create and update -->
+
+    <div class="modal fade" id="modelCU" tabindex="-1" aria-labelledby="modelCU" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+
+            <div class="modal-content">
+                <form method="post" class="needs-validation" novalidate id="frm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modeltitel">create data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 validate-input" data-validate="">
+                            <label for="exampleFormControlInput1" class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name perfume" required>
+                            <div class="invalid-feedback">Name is required</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" maxlength="255" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">imge perfume</label>
+                            <input class="form-control" type="file" id="formFile" name="imge" >
+                            <div class="invalid-feedback">img required</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Quantity" name="quantity" min="1" required>
+                            <div class="invalid-feedback">price more than 0 </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">price</label>
+                            <input type="number" class="form-control" name="price" id="exampleFormControlInput1"
+                                placeholder="price" min="1" required>
+                            <div class="invalid-feedback">price more than 0 </div>
+                        </div>
 
 
 
-    <!-- <script>
-        document.getElementById("showHide").onclick = function () {
-            var theDiv = document.getElementById("foo");
-            if (theDiv.style.display == 'none') {
-                theDiv.style.display = 'inline';
-                this.innerHTML = 'hide';
-            } else {
-                theDiv.style.display = 'none';
-                this.innerHTML = 'Click for more..';
-            }
-        }
-    </script> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="Close"
+                            data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn save" id="Add">Add</button>
+                        <button type="submit" class="btn save" id="update">Save changes</button>
+                    </div>
+                </form>
+            </div>
 
-    <!-- JavaScript Bundle with Popper -->
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bulma.min.js"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
+        var dataSet = [
+            {
+                id: '1',
+                name: 'prod',
+                description: 'desc',
+                image: '/a',
+                quantity: 1,
+                price: 2,
+            }
+        ]
+
         $(document).ready(function () {
             $('#example').DataTable({
+                data: dataSet,
+                columns: [
+                    { data: 'id', title: 'id' },
+                    { data: 'name', title: 'name' },
+                    { data: 'description', title: 'description' },
+                    {
+                        title: 'image',
+                        data: 'image',
+                        render: function (data) {
+                            return `<img src="${data}"/>`
+                        }
+                    },
+                    { data: 'quantity', title: 'quantity.' },
+                    { data: 'price', title: 'price' },
+                    {
+                        title: 'Edite',
+                        'data': null,
+                        render: function (data, type, row) {
+                            return `<a onclick="update('${row.id}')" ><i class="fas fa-edit fs-4"></i></a>`;
+                        }
+                    },
+                    {
+                        title: 'Delete',
+                        data: null,
+                        render: function (data, type, row) {
+                            return `<a onclick="Delete()"><i class="fa-solid fa-trash-can fs-4"></i></a>`;
+                        }
+                    },
+                ],
                 autoWidth: false,
                 columnDefs: [
                     {
@@ -170,8 +196,86 @@
                     },
                 ],
                 Responsive: true,
+
             });
         });
+
+
+
+        var modelCU = new bootstrap.Modal(document.getElementById('modelCU'), {
+            keyboard: false,
+        })
+
+        function Add() {
+            document.getElementById("Add").hidden = false;
+            document.getElementById("update").hidden = true;
+            document.getElementById("modeltitel").innerText = "ADD data";
+            document.getElementById("formFile").required = true;
+            frm.reset();
+            modelCU.show();
+        }
+
+
+
+        function update(id) {
+            document.getElementById("modeltitel").innerText = "update data"
+            document.getElementById("Add").hidden = true;
+            document.getElementById("update").hidden = false;
+            document.getElementById("formFile").required = false;
+            var item;
+            let editedItem = dataSet.filter((element) => {
+                return element['id'] == id
+            })
+            item = editedItem[0];
+            console.log(item)
+            frm.elements.name.value = item.name
+            frm.elements.description.value = item.description
+            frm.elements.quantity.value = item.quantity
+            frm.elements.price.value = item.price
+
+            modelCU.show();
+        }
+
+
+
+
+
+        // var form = document.getElementById("formCU");
+
+
+        var form = document.getElementsByTagName('form')[0];
+        form.addEventListener('submit', function (event) {
+            console.log('aaa');
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                console.log('aaa');
+
+            }
+            else {
+                console.log('aaa');
+            }
+            form.classList.add('was-validated');
+        });
+
+
+        function Delete() {
+            swal({
+                title: "Are you sure?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("sucssus!", {
+                            icon: "success",
+                        });
+                    }
+                });
+        }
+
+
+
 
     </script>
 </body>

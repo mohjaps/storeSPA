@@ -1,9 +1,19 @@
-.btn-outline-primary {
-    color: #485fc7;
+.btn-outline {
+    color: #c6b787;
+    border: 1px solid
 }
 
-.btn-outline-primary:hover {
-    background-color: #485fc7;
+.btn-outline:hover {
+    background-color: #c6b787;
+    border: 1px solid;
+    color: #fff;
+}
+.btn-check:focus+.btn, .btn:focus {
+    color: #c6b787;
+    background-color: var(--bs-btn-hover-bg);
+    border-color: #c6b787;
+    outline: 0;
+    box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
 .pagination-link {
@@ -12,7 +22,9 @@
     min-width: 2.5em;
     border-radius: 50% !important;
 }
-
+.pagination-link:focus, .pagination-next:focus, .pagination-previous:focus {
+    border-color: #c6b787;
+}
 .next,
 .previous {
     border-radius: 20% !important;
@@ -58,4 +70,26 @@ p {
 
 .modelimg{
     height: 400px;
+}
+
+.pagination-link.is-current {
+    background-color: #c6b787;
+    border-color: #c6b787;
+    color: #fff;
+}
+
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #c6b787;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(198 183 136/ 25%);
+}
+
+.save{
+    background-color: #ffc107;
+}
+li a{
+    text-decoration: none;
 }
