@@ -25,12 +25,20 @@ frmLogin.addEventListener('submit', function (e) {
                 }
                 else {
                     let errors = data['errors'];
-                    errors.forEach((error) => {
-                        alert(error)
+                    swal({
+                        title: "Error",
+                        text: errors[0],
+                        icon: "error",
+                        button: "OK",
                     });
                 }
             } else {
-                alert('Login failed')
+                swal({
+                    title: "Error",
+                    text: 'Login Failed',
+                    icon: "error",
+                    button: "OK",
+                });
             }
         }
     }
